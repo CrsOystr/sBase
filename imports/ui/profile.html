@@ -1,0 +1,11 @@
+<template name="profile">
+    <li class="{{#if private}}private{{/if}}">
+
+    <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+
+    {{#if isOwner}}
+        <button class="delete">&times;</button>
+    {{/if}}
+    
+    </li>
+</template>

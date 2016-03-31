@@ -1,0 +1,26 @@
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome</h1>
+            {{> loginButtons}}
+
+            {{#if currentUser}}
+              <form class="new-profile">
+                <input type="text" name="text" placeholder="Type to add new tasks" />
+              </form>
+
+
+            {{/if}}
+
+            <drop>
+                {{> dropdown}}
+            </drop>
+        </header>
+
+        <ul>
+            {{#each profiles}}
+                {{> profile}}
+            {{/each}}
+        </ul>
+    </div>
+</body>
