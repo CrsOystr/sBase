@@ -7,28 +7,32 @@ import './form.js';
 import './body.html';
 
 Template.body.onCreated(function bodyOnCreated() {
-  this.state = new ReactiveDict();
-  Meteor.subscribe('profiles');
+    this.state = new ReactiveDict();
+    Meteor.subscribe('profiles');
 });
 
 Template.body.helpers({
-  profiles(){
-      const instance = Template.instance();
-      return Profiles.find({}, { sort: { createdAt: -1 } });
-  },
+    profiles() {
+        const instance = Template.instance();
+        return Profiles.find({}, {
+            sort: {
+                createdAt: -1
+            }
+        });
+    },
 });
 
 Template.body.events({
-    'submit .new-profile'(event){
+    'submit .new-profile' (event) {
         // Prevent default browser form submit
-    event.preventDefault();
-    // Get value from form element
-    const target = event.target;
-    const text = target.text.value;
+        event.preventDefault();
+        // Get value from form element
+        const target = event.target;
+        const text = target.text.value;
 
-    Meteor.call('profiles.insert', text);
+        Meteor.call('profiles.insert', text);
 
-    //clear form
-    target.text.value = '';
+        //clear form
+        target.text.value = '';
     },
 });

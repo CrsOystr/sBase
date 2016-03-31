@@ -16,11 +16,17 @@ Template.dropdown.helpers({
 });
 
 Template.dropdown.events({
-    "change #category-select": function (event, template) {
+    'change #category-select'(event, template) {
         event.preventDefault();
         const selected_value = $(event.target).val();
         console.log("OK: " + selected_value);
-    }
+    },
+    'click .alertMe'(event){
+        event.preventDefault();
+        const selected_value = $(event.target).val();
+        console.log("OK: " + event.target.value);
+        console.log('damn');
+    },
 });
 
 Template.form.events({

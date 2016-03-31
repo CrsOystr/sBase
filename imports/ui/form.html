@@ -1,19 +1,19 @@
 <template name="form">
     {{> dropdown}}
     <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">@</span>
-      <input type="text" class="form-control" placeholder="Username" >
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Username">
     </div>
 
     <div class="input-group">
         <span id="basic-addon2"></span>
-      <input type="text" class="form-control" placeholder="Website">
+        <input type="text" class="form-control" placeholder="Website">
 
     </div>
 
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Email">
-      <span class="input-group-btn">
+        <input type="text" class="form-control" placeholder="Email">
+        <span class="input-group-btn">
           <button class="submit btn btn-default" type="button">Go!</button>
       </span>
     </div>
@@ -25,7 +25,18 @@
     <select id="category-select">
         <option disabled="disabled" selected="selected">Add Account</option>
         {{#each categories}}
-            <option value="{{this.type}}">{{this.name}}</option>
+        <option value="{{this.type}}">{{this.name}}</option>
         {{/each}}
     </select>
+
+    <div class="btn-group">
+        <button type="button" name="dropButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Add Account <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            {{#each categories}}
+                <li class = "alertMe" value ="{{this.type}}"><a href="#">{{this.name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
 </template>
