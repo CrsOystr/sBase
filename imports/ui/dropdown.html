@@ -2,7 +2,7 @@
     <select id="category-select">
         <option disabled="disabled" selected="selected">Add Account</option>
         {{#each categories}}
-            <option value="{{this}}">{{name}}</option>
+            <option value="{{this.type}}">{{this.name}}</option>
         {{/each}}
     </select>
 </template>

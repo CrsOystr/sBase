@@ -1,4 +1,5 @@
 <template name="form">
+    {{> dropdown}}
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">@</span>
       <input type="text" class="form-control" placeholder="Username" >
@@ -13,7 +14,18 @@
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Email">
       <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Go!</button>
+          <button class="submit btn btn-default" type="button">Go!</button>
       </span>
     </div>
+
+</template>
+
+
+<template name="dropdown">
+    <select id="category-select">
+        <option disabled="disabled" selected="selected">Add Account</option>
+        {{#each categories}}
+            <option value="{{this.type}}">{{this.name}}</option>
+        {{/each}}
+    </select>
 </template>
