@@ -1,6 +1,6 @@
 <body>
     <div class="container">
-        <header>
+        <header class="navbar navbar-fixed">
             <h1>Welcome</h1>
             {{> loginButtons}}
 
@@ -8,13 +8,10 @@
               <form class="new-profile">
                 <input type="text" name="text" placeholder="Type to add new tasks" />
               </form>
-
-
             {{/if}}
 
-            <drop>
-                {{> dropdown}}
-            </drop>
+            {{> dropdown}}
+            {{> form}}
         </header>
 
         <ul>

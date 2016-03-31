@@ -4,6 +4,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { Profiles } from '../api/profiles.js'
 import './profile.js';
 import './dropdown.js';
+import './form.js';
 import './body.html';
 
 Template.body.onCreated(function bodyOnCreated() {
