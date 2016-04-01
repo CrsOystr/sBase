@@ -1,10 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
-import { Profiles } from '../api/profiles.js'
+import { Profiles } from '../api/profiles.js';
+import './body.html';
 import './profile.js';
 import './form.js';
-import './body.html';
+import './addMedia.js';
+import './accessDenied.html';
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();

@@ -1,22 +1,36 @@
 <body>
+</body>
+
+<template name='Home'>
     <div class="container">
-        <header class="navbar navbar-fixed">
-            <h1>Welcome</h1>
-            {{> loginButtons}}
+        <div class="navbar navbar-default" role="navigation">
+        	<div class="navbar-header">
+        		<a class="navbar-brand" href="#">Nic</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+        	</div>
+        	<div class="navbar-collapse collapse">
+        		<ul class="nav navbar-nav navbar-right">
+        			{{> loginButtons}}
+        		</ul>
+        	</div>
+        </div>
 
-            {{#if currentUser}}
-              <form class="new-profile">
-                <input type="text" name="text" placeholder="Type to add new tasks" />
-              </form>
-            {{/if}}
-            
-            {{> form}}
-        </header>
+        {{#if currentUser}}
+          <form class="new-profile">
+            <input type="text" name="text" placeholder="Type to add new tasks" />
+          </form>
+        {{/if}}
 
+        {{> form}}
         <ul>
             {{#each profiles}}
                 {{> profile}}
             {{/each}}
         </ul>
     </div>
-</body>
+</template>

@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor';
 import { Websites } from '../imports/api/websites.js';
-
 import '../imports/api/profiles.js';
 import '../imports/api/websites.js';
 
