@@ -8,10 +8,3 @@ Template.addMedia.onCreated(function addMediaCreated() {
   Meteor.subscribe('websites');
 
 });
-
-Template.profileLink.helpers({
-    getMedia: function(){
-        var siteName = 'reddit';
-        return siteName;
-    }
-});

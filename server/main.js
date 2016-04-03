@@ -1,7 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import { Websites } from '../imports/api/websites.js';
+import { UserProfileLinks } from '../imports/api/userProfileLink.js';
 import '../imports/api/profiles.js';
 import '../imports/api/websites.js';
+import '../imports/api/userProfileLink.js';
 
 Meteor.startup(() => {
     Websites.remove({});
@@ -18,6 +20,6 @@ Meteor.startup(() => {
     Websites.insert({name: "Vimeo", type: "link"});
     Websites.insert({name: "Vine", type: "link"});
     Websites.insert({name: "YouTube", type: "link"});
-
+    UserProfileLinks.insert({media: 'Reddit', url: 'lol'});
 
 });

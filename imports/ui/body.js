@@ -3,7 +3,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { Profiles } from '../api/profiles.js';
 import './body.html';
-import './profile.js';
+import './userProfile.js';
 import './form.js';
 import './addMedia.js';
 import './accessDenied.html';

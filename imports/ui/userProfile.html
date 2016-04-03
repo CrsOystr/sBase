@@ -1,0 +1,24 @@
+<template name="userProfile">
+    <ul>
+        {{#each mediaLinks}}
+            {{> profileLink}}
+        {{/each}}
+    </ul>
+</template>
+
+
+<template name='profileLink'>
+    <div class="media">
+      <div class="media-left media-middle">
+        <a href="#">
+          <img class="media-object" src="/logo/squares-{{media}}.png" alt="..." width="64" height="64">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">Middle aligned media {{url}}</h4>
+        {{#if isOwner}}
+            <button class="delete">&times;</button>
+        {{/if}}
+      </div>
+    </div>
+</template>

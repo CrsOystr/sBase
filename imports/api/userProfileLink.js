@@ -11,8 +11,6 @@ if (Meteor.isServer){
     });
 }
 
-
-
 Meteor.methods({
     'userprofiles.insert'(text){
         check(text, String);
