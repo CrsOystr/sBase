@@ -29,7 +29,7 @@ Meteor.methods({
     'userprofiles.remove'(profileId){
         check(profileId, String);
 
-        const profile = Profiles.findOne(profileId);
+        const profile = UserProfileLinks.findOne(profileId);
         if (profile.owner !== Meteor.userId()) {
             // If the task is private, make sure only the owner can delete it
             throw new Meteor.Error('not-authorized');

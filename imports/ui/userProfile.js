@@ -28,6 +28,6 @@ Template.profileLink.helpers({
 
 Template.profileLink.events({
     'click .delete'() {
-      Meteor.call('profiles.remove', this._id);
+      Meteor.call('userprofiles.remove', this._id);
     },
 });

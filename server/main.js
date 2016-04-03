@@ -20,6 +20,13 @@ Meteor.startup(() => {
     Websites.insert({name: "Vimeo", type: "link"});
     Websites.insert({name: "Vine", type: "link"});
     Websites.insert({name: "YouTube", type: "link"});
-    UserProfileLinks.insert({media: 'Reddit', url: 'lol'});
+    UserProfileLinks.remove({});
+    UserProfileLinks.insert({media: 'Reddit', url: 'https://www.reddit.com/user/test/', handle:'test'});
+    UserProfileLinks.insert({media: 'Instagram', url: 'ok'});
+    UserProfileLinks.insert({media: 'Vine', url: 'damn'});
+    UserProfileLinks.insert({media: 'Snapchat', url: 'https://www.snapchat.com/add/test', handle:'test'});
+
+
+
 
 });

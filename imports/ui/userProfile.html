@@ -1,7 +1,7 @@
 <template name="userProfile">
-    <ul>
+    <ul class="list-group">
         {{#each mediaLinks}}
-            {{> profileLink}}
+            <li class="list-group-item">{{> profileLink}}</li>
         {{/each}}
     </ul>
 </template>
@@ -10,14 +10,15 @@
 <template name='profileLink'>
     <div class="media">
       <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="/logo/squares-{{media}}.png" alt="..." width="64" height="64">
+        <a href="{{url}}">
+          <img class="media-object" src="squares-{{media}}.png" alt="..." width="64" height="64">
         </a>
       </div>
       <div class="media-body">
-        <h4 class="media-heading">Middle aligned media {{url}}</h4>
-        {{#if isOwner}}
-            <button class="delete">&times;</button>
+        <h3 class="media-heading"> <a href="{{url}}">@{{handle}}</a></h3>
+
+            <button name="delete" type="button" class="btn btn-default">Remove</button>
+            {{#if isOwner}}
         {{/if}}
       </div>
     </div>
