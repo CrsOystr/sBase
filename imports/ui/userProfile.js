@@ -15,6 +15,10 @@ Template.userProfile.helpers({
     mediaLinks(){
         return UserProfileLinks.find({});
     },
+    userLinks(){
+        const name = this.toString();
+        return UserProfileLinks.find({username: name});
+    },
 });
 Template.profileLink.helpers({
     isOwner() {

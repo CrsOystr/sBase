@@ -11,21 +11,26 @@ Meteor.startup(() => {
     Websites.insert({name: "Facebook", type: "link"});
     Websites.insert({name: "Instagram", type: "link"});
     Websites.insert({name: "Periscope", type: "link"});
+    Websites.insert({name: "Reddit", type: "name"});
+    Websites.insert({name: "Medium", type: "name"});
+    Websites.insert({name: "Flicker", type: "name"});
     Websites.insert({name: "Snapchat", type: "name"});
-    Websites.insert({name: "Soundcloud", type: "link"});
+    //Websites.insert({name: "Soundcloud", type: "link"});
     Websites.insert({name: "Tumblr", type: "link"});
     Websites.insert({name: "Twitter", type: "link"});
     Websites.insert({name: "Website", type: "link"});
-    Websites.insert({name: "VSCO", type: "link"});
+    //Websites.insert({name: "VSCO", type: "link"});
     Websites.insert({name: "Vimeo", type: "link"});
     Websites.insert({name: "Vine", type: "link"});
     Websites.insert({name: "YouTube", type: "link"});
     UserProfileLinks.remove({});
-    UserProfileLinks.insert({media: 'Reddit', url: 'https://www.reddit.com/user/test/', handle:'test'});
-    UserProfileLinks.insert({media: 'Instagram', url: 'ok'});
-    UserProfileLinks.insert({media: 'Vine', url: 'damn'});
-    UserProfileLinks.insert({media: 'Snapchat', url: 'https://www.snapchat.com/add/test', handle:'test'});
-
+    UserProfileLinks.insert({media: 'Reddit', url: 'https://www.reddit.com/user/test/', handle:'test', username:'alex'});
+    UserProfileLinks.insert({media: 'Instagram', url: 'ok', handle:'TESTBRUhs', username:'alex'});
+    UserProfileLinks.insert({media: 'Vine', url: '', handle:'TESTBRUhs', username:'alex'});
+    UserProfileLinks.insert({media: 'Snapchat', url: 'https://www.snapchat.com/add/test', handle:'test', username:'alex'});
+    UserProfileLinks.insert({media: 'Tumblr', url: 'http://test.tumblr.com/', handle: 'test', username:'alex'})
+    UserProfileLinks.insert({media: 'Twitter', url: 'https://twitter.com/CrsOystr', handle: 'CrsOystr', username:'alex'})
+    //UserProfileLinks.insert({media: 'Facebook', url: 'https://twitter.com/CrsOystr', handle: 'CrsOystr'})
 
 
 

@@ -1,8 +1,10 @@
 <template name="userProfile">
     <ul class="list-group">
-        {{#each mediaLinks}}
+
+        {{#each userLinks}}
             <li class="list-group-item">{{> profileLink}}</li>
         {{/each}}
+
     </ul>
 </template>
 
@@ -11,7 +13,7 @@
     <div class="media">
       <div class="media-left media-middle">
         <a href="{{url}}">
-          <img class="media-object" src="squares-{{media}}.png" alt="..." width="64" height="64">
+          <img class="media-object" src="/squares-{{media}}.png" alt="..." width="64" height="64">
         </a>
       </div>
       <div class="media-body">
