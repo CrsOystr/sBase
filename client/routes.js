@@ -1,3 +1,6 @@
+import { Meteor } from 'meteor/meteor';
+
+
 Router.route('/', function () {
   this.render('Home');
 });
@@ -14,13 +17,23 @@ Router.route('/profile', function () {
   this.render('userProfile');
 });
 
-Router.route('/user/:_username', function () {
-  this.render('userProfile', {
-      data : function() {
-          return this.params._username;
-      }
-  });
+Router.route('/user/:_username', {
+    template: 'userProfile',
+    data: function(){
+        return this.params._username;
+    },
+    action: function(){
+        if (Meteor.users.findOne({username: this.params._username})){
+            this.render();
+        }
+        else{
+            this.render('accessDenied');
+        }
+    }
 });
+
+
+
 
 Router.onBeforeAction(function() {
   if (!Meteor.user()) {
