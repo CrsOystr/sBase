@@ -1,7 +1,26 @@
 <template name="accessDenied">
   <div class="alert alert-danger" role="alert">
-    <h2>Access Denied</h2>
+    <h2><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        Access Denied
+    </h2>
     <hr>
-    <h4>Please log in to access this page!</h4>
+    <h4>Please <a href="/" class="alert-link">log in</a> to access this page!</h4>
+  </div>
+</template>
+
+
+<template name="userDenied">
+  <div class="alert alert-warning" role="alert">
+    <h2>User does not exist</h2>
+    <hr>
+    <h4>Check name and try again</h4>
+  </div>
+</template>
+
+<template name="404">
+  <div class="alert alert-warning" role="alert">
+    <h2>404</h2>
+    <hr>
+    <h4>Check name and try again</h4>
   </div>
 </template>
