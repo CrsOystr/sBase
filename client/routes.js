@@ -6,11 +6,12 @@ Deps.autorun(function(){
 });
 
 Router.configure({
+    layoutTemplate: 'AppLayout',
     notFoundTemplate: '404'
 });
 
 Router.route('/', function () {
-  this.render('Home');
+    this.render('Home');
 });
 
 Router.route('/add', function () {

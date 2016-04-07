@@ -1,5 +1,11 @@
 <template name="userProfile">
-    <h3> {{userTitle}}: </h3>
+    {{#if isOwner}}
+        <h2>This is your page <br><small> These are your profiles</small></h2>
+
+    {{else}}
+        <h2>This is {{userTitle}} <br><small> These are his profiles</small></h2>
+    {{/if}}
+
     <ul class="list-group">
         {{#each userLinks}}
             <li class="list-group-item">{{> profileLink}}</li>

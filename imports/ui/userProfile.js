@@ -15,6 +15,13 @@ Template.userProfile.helpers({
     userTitle(){
         return this.toString();
     },
+    isOwner() {
+        if (Meteor.user()){
+            return this.toString() === Meteor.user().username;
+        }else{
+            return false;
+        }
+    },
     userLinks(){
         const name = this.toString();
         return UserProfileLinks.find({username: name});
@@ -22,7 +29,11 @@ Template.userProfile.helpers({
 });
 Template.profileLink.helpers({
     isOwner() {
-        return this.username === Meteor.user().username;
+        if (Meteor.user()){
+            return this.username === Meteor.user().username;
+        }else{
+            return false;
+        }
     },
     getMedia(){
         var siteName = 'reddit';
