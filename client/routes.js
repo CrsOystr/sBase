@@ -1,4 +1,9 @@
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
+
+Deps.autorun(function(){
+  Meteor.subscribe('userNames');
+});
 
 Router.configure({
     notFoundTemplate: '404'
@@ -22,15 +27,24 @@ Router.route('/profile', function () {
 
 Router.route('/user/:_username', {
     template: 'userProfile',
+    waitOn: function() {
+        return this.subscribe('userNames');
+    },
     data: function(){
         return this.params._username;
     },
     action: function(){
-        if (Meteor.users.findOne({username: this.params._username})){
-            this.render();
-        }
-        else{
-            this.render('userDenied');
+        if(this.ready){
+            console.log(this.params._username);
+            //console.log(Meteor.call('getUserNames',this.params._username));
+            console.log(Meteor.users.find({username: this.params._username}).fetch());
+
+            if (Meteor.users.findOne({username: this.params._username})){
+                this.render();
+            }
+            else{
+                this.render('userDenied');
+            }
         }
     }
 });

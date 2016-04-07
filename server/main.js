@@ -4,6 +4,7 @@ import { UserProfileLinks } from '../imports/api/userProfileLink.js';
 import '../imports/api/profiles.js';
 import '../imports/api/websites.js';
 import '../imports/api/userProfileLink.js';
+import '../imports/api/users.js';
 
 Meteor.startup(() => {
     Websites.remove({});

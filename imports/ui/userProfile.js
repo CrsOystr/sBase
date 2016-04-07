@@ -12,8 +12,8 @@ Template.userProfile.onCreated(function bodyOnCreated() {
 });
 
 Template.userProfile.helpers({
-    mediaLinks(){
-        return UserProfileLinks.find({});
+    userTitle(){
+        return this.toString();
     },
     userLinks(){
         const name = this.toString();
@@ -22,7 +22,7 @@ Template.userProfile.helpers({
 });
 Template.profileLink.helpers({
     isOwner() {
-        return this.owner === Meteor.userId();
+        return this.username === Meteor.user().username;
     },
     getMedia(){
         var siteName = 'reddit';

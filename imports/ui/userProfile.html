@@ -1,5 +1,5 @@
 <template name="userProfile">
-    <h3> TEST USER: </h3>
+    <h3> {{userTitle}}: </h3>
     <ul class="list-group">
         {{#each userLinks}}
             <li class="list-group-item">{{> profileLink}}</li>
@@ -16,10 +16,9 @@
         </a>
       </div>
       <div class="media-body">
-        <h3 class="media-heading"> <a href="{{url}}">@{{handle}}</a></h3>
-
+        <h3 class="media-heading"> <a href="{{url}}">{{handle}}</a></h3>
+        {{#if isOwner}}
             <button name="delete" type="button" class="btn btn-default">Remove</button>
-            {{#if isOwner}}
         {{/if}}
       </div>
     </div>
