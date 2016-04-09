@@ -30,10 +30,16 @@ Template.dropdown.events({
 });
 
 Template.form.events({
-  'click .btn'() {
-    console.log("clicked");
-    const handle = document.getElementById('handle').value;
-    console.log(handle);
-    Meteor.call('userprofiles.insert','Reddit','url, ''handle')
+  'submit'(event, template) {
+      event.preventDefault();
+      console.log("clicked");
+      console.log('rekt');
+      const target = event.target;
+      const url = target.handle.value;
+      const handle = target.handle.value;
+      console.log(url);
+      console.log(handle);
+
+      Meteor.call('userprofiles.insert','Reddit', url, handle);
   },
 });

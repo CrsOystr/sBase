@@ -1,22 +1,19 @@
 <template name='form'>
-    {{> dropdown}}
-    <div class="input-group">
-        <span class="input-group-addon" id="basic-addon1">@</span>
-        <input name='handle' type="text" class="form-control" placeholder="Username">
-    </div>
+    <form class = "new-profile">
+        {{> dropdown}}
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@</span>
+            <input name='handle' type="text" class="form-control" placeholder="Username">
+        </div>
 
-    <div class="input-group">
-        <span id="basic-addon2"></span>
-        <input name='website' type="text" class="form-control" placeholder="Website">
-
-    </div>
-
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Email">
-        <span class="input-group-btn">
-          <button class="submit btn btn-default" type="button">Go!</button>
-      </span>
-    </div>
+        <div class="input-group">
+            <input name='url' type="text" class="form-control" placeholder="URL">
+            <span class="input-group-btn">
+              <input type="submit" id="submit" class="btn btn-default">
+          </span>
+        </div>
+    </form>
+    
 
 </template>
 

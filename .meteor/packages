@@ -22,3 +22,5 @@ reactive-dict
 twbs:bootstrap
 iron:router
 ian:accounts-ui-bootstrap-3
+aldeed:autoform
+aldeed:collection2

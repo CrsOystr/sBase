@@ -27,7 +27,7 @@ Meteor.startup(() => {
     UserProfileLinks.remove({});
     UserProfileLinks.insert({media: 'Reddit', url: 'https://www.reddit.com/user/test/', handle:'test', username:'alex'});
     UserProfileLinks.insert({media: 'Instagram', url: 'ok', handle:'TESTBRUhs', username:'alex'});
-    UserProfileLinks.insert({media: 'Vine', url: '', handle:'TESTBRUhs', username:'alex'});
+    UserProfileLinks.insert({media: 'Vine', url: 'ooooo', handle:'TESTBRUhs', username:'alex'});
     UserProfileLinks.insert({media: 'Snapchat', url: 'https://www.snapchat.com/add/test', handle:'test', username:'alex'});
     UserProfileLinks.insert({media: 'Tumblr', url: 'http://test.tumblr.com/', handle: 'test', username:'alex'})
     UserProfileLinks.insert({media: 'Twitter', url: 'https://twitter.com/CrsOystr', handle: 'CrsOystr', username:'alex'})

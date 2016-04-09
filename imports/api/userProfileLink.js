@@ -4,6 +4,29 @@ import { check } from 'meteor/check';
 
 export const UserProfileLinks = new Mongo.Collection('userprofiles');
 
+UserProfileLinks.attachSchema(new SimpleSchema({
+    media: {
+        type: String,
+        label: "Media",
+        max: 25
+    },
+    url: {
+        type: String,
+        label: "URL",
+        max: 100
+    },
+    handle: {
+        type: String,
+        label: "HANDLE",
+        max: 40
+    },
+    username: {
+        type: String,
+        label: "UseName"
+    }
+}));
+
+
 if (Meteor.isServer){
     // Only publish tasks that are public or belong to the current user
     Meteor.publish('userprofiles', function userProfilesPublication() {
@@ -20,7 +43,7 @@ Meteor.methods({
         if(!Meteor.userId()){
             throw new Meteor.Error('not-authorized');
         }
-
+        console.log("working userprofile insert");
         UserProfileLinks.insert({
             media: media_in,
             url: url_in,
