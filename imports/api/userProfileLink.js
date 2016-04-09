@@ -12,19 +12,21 @@ if (Meteor.isServer){
 }
 
 Meteor.methods({
-    'userprofiles.insert'(text){
-        check(text, String);
+    'userprofiles.insert'(media_in, url_in, handle_in){
+        check(media_in, String);
+        check(url_in, String);
+        check(handle_in, String);
 
         if(!Meteor.userId()){
             throw new Meteor.Error('not-authorized');
         }
 
         UserProfileLinks.insert({
-            text,
-            createdAt: new Date(),
-            owner: Meteor.userId(),
+            media: media_in,
+            url: url_in,
+            handle: handle_in,
             username: Meteor.user().username,
-        });
+          });
     },
     'userprofiles.remove'(profileId){
         check(profileId, String);

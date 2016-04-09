@@ -31,7 +31,9 @@ Template.dropdown.events({
 
 Template.form.events({
   'click .btn'() {
-    // Set the checked property to the opposite of its current value
     console.log("clicked");
+    const handle = document.getElementById('handle').value;
+    console.log(handle);
+    Meteor.call('userprofiles.insert','Reddit','url, ''handle')
   },
 });
