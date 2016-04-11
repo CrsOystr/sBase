@@ -17,6 +17,9 @@ Router.route('/', function () {
 Router.route('/add', function () {
   this.render('form');
 });
+Router.route('/adder', function () {
+  this.render('autoformer');
+});
 
 Router.route('/add/:social', function () {
   this.render('addMedia');

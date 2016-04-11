@@ -2,9 +2,9 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
-export const UserProfileLinks = new Mongo.Collection('userprofiles');
+export let UserProfileLinks = new Mongo.Collection('userprofiles');
 
-UserProfileLinks.attachSchema(new SimpleSchema({
+UserProfileLinkSchema = new SimpleSchema({
     media: {
         type: String,
         label: "Media",
@@ -17,14 +17,14 @@ UserProfileLinks.attachSchema(new SimpleSchema({
     },
     handle: {
         type: String,
-        label: "HANDLE",
+        label: "Handle",
         max: 40
     },
     username: {
         type: String,
         label: "UseName"
     }
-}));
+});
 
 
 if (Meteor.isServer){
