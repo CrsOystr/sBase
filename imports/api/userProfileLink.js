@@ -7,6 +7,7 @@ export let UserProfileLinks = new Mongo.Collection('userprofiles');
 UserProfileLinkSchema = new SimpleSchema({
     media: {
         type: String,
+        optional: false,
         label: "Media",
         max: 25
     },

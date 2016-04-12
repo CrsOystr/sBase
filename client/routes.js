@@ -53,9 +53,6 @@ Router.route('/user/:_username', {
     }
 });
 
-
-
-
 Router.onBeforeAction(function() {
   if (!Meteor.user()) {
     this.render('accessDenied');

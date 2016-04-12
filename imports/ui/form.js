@@ -29,6 +29,21 @@ Template.dropdown.events({
     },
 });
 
+Template.autoformer.helpers({
+    categoriesHelper: function(){
+        var cats = ["C"];
+        var sure = ["ok", "rip"];
+        Websites.find().forEach(function(obj){
+            cats.push(obj.media)
+        })
+        return [
+          {label: "2013", value: 2013},
+          {label: "2014", value: 2014},
+          {label: "2015", value: 2015}
+        ];
+    }
+});
+
 Template.form.events({
   'submit'(event, template) {
       event.preventDefault();
